@@ -1,0 +1,23 @@
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editors
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Node (if used for testing/tooling)
+node_modules/
+package-lock.json
+
+# Python (if used for scripts)
+__pycache__/
+*.pyc
+.venv/
+
+# Claude Code session artifacts
+.claude/settings.local.json
