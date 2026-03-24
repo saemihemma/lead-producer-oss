@@ -1,14 +1,19 @@
 # Lead Producer - Full-Stack AI Product Team
 
-**A full-stack AI product team for building, reviewing, and hardening complex software.** Start
-with one entry point: the Lead Producer assembles the right specialists, stress-tests the result,
-and gives you a clear action plan instead of scattered opinions.
+**AI agent work is probabilistic.** Better guardrails, sharper routing, stronger architecture, and
+more diverse perspectives on the same problem all increase the odds of a good outcome. Lead
+Producer is built to make that reliability practical: one entry point, the right specialists,
+explicit stress-testing, and clear recommendations instead of scattered guesses.
 
-Built for MMO and live-service complexity, this pack shines on the hard stuff: economies,
-progression, balance, exploits, smart contracts, live incidents, deployment risk, and systems that
-interact in messy ways. That same depth makes it broadly useful outside games too: frontend design
-and engineering, backend architecture, product strategy, QA, documentation, cleanup, refactors,
-launch readiness, and post-launch operations.
+This pack models agent work after real software professions because those structures improve
+decision quality. Roles, teams, and workflows give agents boundaries, accountability, and multiple
+angles on design, frontend, backend, product, QA, smart contracts, deployment, live ops,
+iteration, and cleanup.
+
+Complex games that run from conception to live service are one of the hardest environments in
+software development. If a skill library can support MMO and live-service complexity—economies,
+progression, exploits, incidents, rollout risk, and tightly coupled systems—it becomes broadly
+useful across other software work too.
 
 47 AI skills: 28 specialist roles, 12 review teams, 6 structured workflows. Use it across the
 full product lifecycle: prototype, design, implementation, testing, deployment, live ops,
@@ -72,17 +77,12 @@ stress-tested.
 This pack replaces "ask an assistant and hope" with a structured review process: domain specialists
 analyze the problem, a Devil's Advocate challenges their assumptions, and the Lead Producer
 synthesizes everything into an actionable result with evidence standards and severity rankings.
+The point is not bigger prompts. It is to make agents behave more like decision systems: surface
+evidence, compare trade-offs, state confidence, and make the next step obvious.
 
-It also comes from synthesis, not reinvention. This pack takes inspiration from strong ideas in
-`superpowers`, `compilation7`, and `gstack`, then adapts them for the realities of end-to-end MMO
-and live-service product development. From `gstack` we kept the parts worth their token cost:
-search before building, explicit current-state and boundary framing, systematic root-cause
-debugging discipline, status-quo and narrowest-wedge checks in product review, what-already-exists
-and not-in-scope framing in technical review, and existing-design-leverage plus AI slop checks in
-frontend review. We deliberately do not import giant preambles, telemetry, self-upgrade flows, or
-slash-command sprawl. The result is not a loose pile of specialist prompts or a direct fork of
-another pack, but a coordinated team for design, frontend, backend, product, QA, smart contracts,
-deployment, live ops, iteration, and cleanup.
+It also comes from synthesis, not reinvention. This pack draws inspiration from `superpowers`,
+`compilation7`, and `gstack`, then adapts those ideas into a coordinated system for end-to-end MMO
+and live-service development. It is not a direct fork or bundled dependency on any of them.
 
 You do not need to know the internal routing. Describe the problem. The Lead Producer figures out
 who to call.
