@@ -95,9 +95,11 @@ This repo works best when skills behave like decision systems, not essay generat
 - Reversible decisions are preferred when uncertainty is high.
 - Company values should show up in behavior, not just words: unity, courage, excellence, honesty.
 
-For skills that depend on product, design, or domain context, consult project context sources first. If
-that context is unavailable, state the gap explicitly and downgrade confidence rather than filling the
-space with generic best practices.
+For skills that depend on product, design, or domain context, consult project context sources when they
+are available and worth the context cost. Eve Frontier Brain MCP is an optional configuration, not a
+required setup step, because pulling too much external context can consume valuable tokens. If that
+context is unavailable or intentionally skipped, state the gap explicitly and downgrade confidence rather
+than filling the space with generic best practices.
 
 When updating skills, prefer report structures that include:
 - recommendation
