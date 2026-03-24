@@ -77,10 +77,11 @@ who to call.
 
 ```bash
 git clone https://github.com/saemihemma/lead-producer.git
-ln -s "$(pwd)/lead-producer/.claude" /path/to/your/project/.claude
+cd lead-producer
+ln -s "$(pwd)/.claude" /path/to/your/project/.claude
 ```
 
-Start a session, then use `/lead-producer`.
+Start a session in your project directory, then use `/lead-producer`.
 
 ### OpenAI Codex
 

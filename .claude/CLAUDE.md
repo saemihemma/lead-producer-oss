@@ -44,6 +44,8 @@ Claude's only job: invoke Lead Producer, then execute LP's explicit skill-loadin
 
 **This section is decision support for the Lead Producer. Do not use it to invoke skills directly.**
 
+This table lists LP-selectable skills. An additional 22 specialist roles (backend engineer, frontend engineer, security engineer, etc.) are available as team members — teams load them internally when needed. LP does not invoke team-internal roles directly.
+
 | Need | Route To |
 |------|----------|
 | Security/exploit review | `team-red-team` |
