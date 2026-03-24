@@ -84,6 +84,35 @@ who to call.
 
 ---
 
+## Skill Design Principles
+
+This repo works best when skills behave like decision systems, not essay generators.
+
+- Operating philosophy should be executable: principles must translate into concrete behavior rules.
+- Reports should be scannable first and deep second: a lead should grasp the recommendation fast.
+- Systematic evaluation beats ad-hoc intuition: compare options with a consistent rubric.
+- Evidence beats generic confidence: recommendations should cite verified context, trade-off logic, or explicit assumptions.
+- Reversible decisions are preferred when uncertainty is high.
+- Company values should show up in behavior, not just words: unity, courage, excellence, honesty.
+
+For skills that depend on product, design, or domain context, consult project context sources first. If
+that context is unavailable, state the gap explicitly and downgrade confidence rather than filling the
+space with generic best practices.
+
+When updating skills, prefer report structures that include:
+- recommendation
+- confidence
+- verified context and assumptions
+- decision criteria
+- option comparison
+- risks and mitigations
+- open questions
+- next step
+
+See [whenupdating.md](./whenupdating.md) for the authoring rules that keep these patterns consistent.
+
+---
+
 ## Quick Start
 
 ### Claude Code
