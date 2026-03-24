@@ -37,18 +37,20 @@ Every review must ship with a verified Mermaid diagram:
 - Validate against code or evidence before accepting
 
 ## Workflow
-1. Load truth sources: architecture docs, code reality, constraints.
+1. Load truth sources: architecture docs, code reality, constraints, and what already exists.
 2. Run specialist perspectives in parallel; sequence only when dependent.
 3. Rank findings by reversibility: hardest-to-change first.
-4. Resolve conflicts explicitly.
-5. Synthesize for acceptance.
+4. Call out what is not in scope and the top failure modes.
+5. Resolve conflicts explicitly.
+6. Synthesize for acceptance.
 
 ## Default Output
 ```text
 ARCHITECTURE REVIEW
 ===================
-System Shape: components, boundaries, ownership, major contracts
+System Shape: existing components, boundaries, ownership, major contracts
 Risk Review: scalability, security, migration/rollback risks
+Failure Modes: top failure modes, out-of-scope work
 Reversibility: hardest-to-change decisions, attention order
 Artifact: verified Mermaid diagram
 Verdict: Accept / Rework / Escalate, open questions
@@ -60,5 +62,6 @@ Verdict: Accept / Rework / Escalate, open questions
 
 ## Anti-Drift Rules
 - Do not expand scope to adjacent systems unless the boundary question depends on it.
+- State what already exists before recommending new structure.
 - Do not average conflicting specialist opinions; resolve them explicitly.
 - Diagram must match code reality, not aspirational architecture.

@@ -13,7 +13,7 @@ Structured process for production incidents. Turns chaos into a sequence: detect
 - Pre-launch: rehearsing incident response readiness
 
 ## Do NOT Use When
-- Bug investigation in development (use `workflow-issue-triage`)
+- Bug investigation in development (use `workflow-systematic-debugging`)
 - Proactive security review (use `team-red-team`)
 - Infrastructure design (use `team-infrastructure`)
 - Issue is already resolved and just needs documentation

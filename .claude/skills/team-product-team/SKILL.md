@@ -28,17 +28,19 @@ Decide whether a feature or product move is worth doing, feasible to ship, and m
 - Economy-specialist question (use `team-economy-team`)
 
 ## Workflow
-1. Define user problem, audience, expected outcome.
-2. Review value, feasibility, experience quality, measurement together.
-3. Make scope cuts explicit.
-4. Produce recommendation with launch conditions and success checks.
+1. Define user problem, audience, expected outcome, and current status quo or workaround.
+2. Pressure-test the narrowest buildable wedge before endorsing broader scope.
+3. Review value, feasibility, experience quality, and measurement together.
+4. Make scope cuts explicit; compare alternatives only when multiple plausible directions would change the decision.
+5. Produce recommendation with launch conditions and success checks.
 
 ## Default Output
 ```text
 PRODUCT TEAM REVIEW
 ===================
-Problem: user need, target segment
-Recommendation: go / no-go / re-scope, MVP boundary
+Problem: user need, target segment, current status quo
+Recommendation: go / no-go / re-scope, narrowest wedge
+Scope: explicit cuts, alternatives if decision-relevant
 Risks: feasibility, experience, adoption/measurement risks
 Measurement: success metric, guardrails, post-launch checks
 ```
@@ -50,5 +52,6 @@ Measurement: success metric, guardrails, post-launch checks
 
 ## Anti-Drift Rules
 - Do not let feature momentum substitute for user-value evidence.
+- Name the current status quo before expanding scope.
 - Do not expand scope beyond the feature under review.
 - If team cannot reach consensus, state the disagreement and escalate.

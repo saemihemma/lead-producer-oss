@@ -10,6 +10,33 @@ if (-not (Test-Path $SourceRoot)) {
     exit 1
 }
 
+function Test-CodexCli {
+    $command = Get-Command codex -ErrorAction SilentlyContinue
+    if (-not $command) {
+        Write-Warning "Codex CLI was not found in PATH. Open Codex once or reinstall it before smoke-testing skills."
+        return
+    }
+
+    try {
+        $versionOutput = & $command.Source --version 2>&1
+        if ($LASTEXITCODE -eq 0) {
+            Write-Host "Verified Codex CLI: $($versionOutput | Select-Object -First 1)"
+            return
+        }
+    }
+    catch {
+        # fall through to warning below
+    }
+
+    Write-Warning "Codex CLI is present but did not execute cleanly from shell."
+    Write-Warning "Resolved path: $($command.Source)"
+
+    if ($command.Source -like '*WindowsApps*') {
+        Write-Warning "This usually means the Windows Store app alias exists but direct shell execution is blocked."
+        Write-Warning "Open Codex once or reinstall it so a working shim appears under %LOCALAPPDATA%\\OpenAI\\Codex\\bin, then rerun `codex --version`."
+    }
+}
+
 New-Item -ItemType Directory -Force -Path $TargetRoot | Out-Null
 
 $linked = 0
@@ -44,3 +71,6 @@ Write-Host "Linked $linked skills into $TargetRoot"
 if ($skipped -gt 0) {
     Write-Host "Skipped $skipped existing non-link target(s)."
 }
+
+Write-Host ""
+Test-CodexCli

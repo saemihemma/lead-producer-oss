@@ -1,6 +1,6 @@
 # Agent Skills — Game Development Pack
 
-1 coordinator (Lead Producer) + 45 specialist skills: 28 roles, 12 teams, 5 workflows.
+1 coordinator (Lead Producer) + 46 specialist skills: 28 roles, 12 teams, 6 workflows.
 
 ## Loading Rules
 
@@ -36,9 +36,10 @@ Claude's only job: invoke Lead Producer, then execute LP's explicit skill-loadin
 
 ## Core Principles
 
-1. **Replace, Don't Accumulate** — Read current state first. Remove old before adding new. Verify uniqueness. Flag bloat.
-2. **Start From the Problem** — Anchor on intended behavior, not current state. If too tangled to patch, propose rewrite.
-3. **One Job Per Artifact** — Files, components, functions: one purpose each. Split if doing two jobs.
+1. **Replace, Don't Accumulate** - Read current state first. Remove old before adding new. Verify uniqueness. Flag bloat.
+2. **Start From the Problem** - Anchor on intended behavior, not current state. If too tangled to patch, propose rewrite.
+3. **One Job Per Artifact** - Files, components, functions: one purpose each. Split if doing two jobs.
+4. **Search Before Building** - Read current code, docs, configs, and interfaces before proposing additions or rewrites. Reuse what already satisfies the need.
 
 ## Skill Routing Reference (Lead Producer Only)
 
@@ -67,7 +68,8 @@ This table lists LP-selectable skills. Some roles appear both here (for standalo
 | Combat/progression numbers | `role-game-balance-designer` |
 | Production incident / live-service ops | `role-liveops-engineer` |
 | Interface design options | `workflow-design-interface-options` |
-| Bug/issue investigation | `workflow-issue-triage` |
+| Bug/issue investigation | `workflow-systematic-debugging` |
+| Bug artifact / handoff | `workflow-issue-triage` |
 | shadcn/ui implementation | `workflow-shadcn-ui` |
 | Test-driven development | `workflow-test-driven-development` |
 | Production incident response | `workflow-incident-response` |
@@ -82,6 +84,8 @@ This table lists LP-selectable skills. Some roles appear both here (for standalo
 - Blue Team = cleanup verification; Dev Team = broader technical review
 - LiveOps Eng = production incidents/triage; DevOps Eng = infra/CI/CD/deployment
 - Economy anomaly: if happening now → LiveOps Eng; if steady-state → Economist
+
+- Systematic Debugging = find root cause; Issue Triage = package findings and handoff
 
 ## Project Context Modules
 

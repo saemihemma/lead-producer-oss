@@ -10,7 +10,7 @@ interact in messy ways. That same depth makes it broadly useful outside games to
 and engineering, backend architecture, product strategy, QA, documentation, cleanup, refactors,
 launch readiness, and post-launch operations.
 
-46 AI skills: 28 specialist roles, 12 review teams, 5 structured workflows. Use it across the
+47 AI skills: 28 specialist roles, 12 review teams, 6 structured workflows. Use it across the
 full product lifecycle: prototype, design, implementation, testing, deployment, live ops,
 iteration, and code cleanup. Works with **Claude Code** and **OpenAI Codex** on Mac and Windows.
 
@@ -58,7 +58,7 @@ FINDINGS (synthesized):
    respawn windows +/-30% and add diminishing returns per-account.
 ```
 
-This is what 46 specialists working together looks like: one prompt, structured analysis, and a
+This is what a coordinated AI skill pack looks like: one prompt, structured analysis, and a
 prioritized action plan.
 
 ---
@@ -74,10 +74,15 @@ analyze the problem, a Devil's Advocate challenges their assumptions, and the Le
 synthesizes everything into an actionable result with evidence standards and severity rankings.
 
 It also comes from synthesis, not reinvention. This pack takes inspiration from strong ideas in
-`superpowers` and `compilation7`, then adapts them for the realities of end-to-end MMO and
-live-service product development. The result is not a loose pile of specialist prompts or a direct
-fork of another pack, but a coordinated team for design, frontend, backend, product, QA, smart
-contracts, deployment, live ops, iteration, and cleanup.
+`superpowers`, `compilation7`, and `gstack`, then adapts them for the realities of end-to-end MMO
+and live-service product development. From `gstack` we kept the parts worth their token cost:
+search before building, explicit current-state and boundary framing, systematic root-cause
+debugging discipline, status-quo and narrowest-wedge checks in product review, what-already-exists
+and not-in-scope framing in technical review, and existing-design-leverage plus AI slop checks in
+frontend review. We deliberately do not import giant preambles, telemetry, self-upgrade flows, or
+slash-command sprawl. The result is not a loose pile of specialist prompts or a direct fork of
+another pack, but a coordinated team for design, frontend, backend, product, QA, smart contracts,
+deployment, live ops, iteration, and cleanup.
 
 You do not need to know the internal routing. Describe the problem. The Lead Producer figures out
 who to call.
@@ -112,7 +117,7 @@ Set-Location lead-producer
 Restart Codex, then use `$lead-producer`. Example:
 
 ```text
-Use $lead-producer to review this feature for security risks.
+Use $lead-producer to investigate why reward claims intermittently fail after reconnect. Find the root cause before fixing.
 ```
 
 See [`.codex/INSTALL.md`](.codex/INSTALL.md) for the Codex install details.
@@ -153,12 +158,13 @@ See [`.codex/INSTALL.md`](.codex/INSTALL.md) for the Codex install details.
 | Blue Team | Cleanup verification - dead code removal, regression check |
 | Open Source | OSS readiness - licensing, contribution guides, API surface |
 
-### 5 Workflows
+### 6 Workflows
 
 | Workflow | When To Use |
 |----------|-------------|
 | Incident Response | Production is broken. Detect -> triage -> act -> postmortem |
-| Issue Triage | Structured bug investigation and root-cause analysis |
+| Systematic Debugging | Unknown bug or failure. Reproduce -> hypothesize -> test -> confirm root cause |
+| Issue Triage | Package debugging findings into a durable handoff artifact |
 | Test-Driven Development | Behavior-sensitive changes need disciplined execution |
 | Design Interface Options | Compare 3 interface approaches side-by-side |
 | shadcn/ui Implementation | Component implementation with shadcn/ui patterns |
@@ -234,6 +240,28 @@ Use $lead-producer to assess whether PvP loot drops would break the economy.
 Use $lead-producer to design three options for guild management UI.
 ```
 
+### Unknown bug investigation
+
+**Claude Code**
+
+```text
+/lead-producer Investigate why reward claims intermittently fail after reconnect. Find the root cause before fixing.
+```
+
+**Codex**
+
+```text
+Use $lead-producer to investigate why reward claims intermittently fail after reconnect. Find the root cause before fixing.
+```
+
+### Debugging handoff
+
+**Codex**
+
+```text
+Use $lead-producer to package this debugging result into a handoff artifact for the next engineer.
+```
+
 ---
 
 ## Context Overlays
@@ -253,7 +281,7 @@ lead-producer/
 |-- .claude/                          # source of truth
 |   |-- CLAUDE.md                     # routing table, loading rules, protocols
 |   |-- settings.json                 # permission config
-|   `-- skills/                       # 46 skill directories
+|   `-- skills/                       # skill directories
 |       |-- lead-producer/SKILL.md
 |       |-- role-economist/SKILL.md
 |       |-- team-red-team/SKILL.md

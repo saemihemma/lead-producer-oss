@@ -25,18 +25,22 @@ Single technical verdict on whether implementation is structurally sound, mainta
 - Reduction verification (use `team-blue-team`)
 
 ## Workflow
-1. Review structure, code quality, test posture together.
-2. Run specialist passes in parallel.
-3. Merge findings: test gaps map to risky code, risky code maps to architecture.
-4. Resolve conflicts, produce one technical verdict.
+1. Check what already exists before judging what should change.
+2. Review structure, code quality, and test posture together.
+3. Run specialist passes in parallel.
+4. Merge findings: test gaps map to risky code, risky code maps to architecture.
+5. Call out what is out of scope and the top failure modes.
+6. Resolve conflicts, produce one technical verdict.
 
 ## Default Output
 ```text
 DEV TEAM REVIEW
 ===============
+Current State: relevant existing code paths, boundaries, reuse opportunities
 Architecture: boundary/design concerns
 Code Quality: maintainability findings, debt/complexity risks
 Verification: test gaps, regression risks
+Failure Modes: top breakages to watch, what is not in scope
 Recommendation: merge / rework / escalate, highest-priority fixes
 ```
 
@@ -50,5 +54,6 @@ Recommendation: merge / rework / escalate, highest-priority fixes
 
 ## Anti-Drift Rules
 - Stay constructive, not adversarial (that's Red Team's job).
+- Name what already exists before recommending new structure.
 - Output must state what blocks acceptance vs what is advisory.
 - Do not expand into product or economy analysis under technical review label.

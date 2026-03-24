@@ -25,18 +25,18 @@ Decide whether an interface is usable, implementable, accessible, and technicall
 - Narrow shadcn/ui method (use `workflow-shadcn-ui`)
 
 ## Workflow
-1. Define critical user journey and screens/states that matter most.
-2. Review UX, frontend implementation, API dependence together.
-3. Performance, failure handling, accessibility part of same verdict.
+1. Define critical user journey, key screens/states, and existing design patterns worth reusing.
+2. Review UX, frontend implementation, and API dependence together.
+3. Performance, failure handling, accessibility, and AI slop risk are part of the same verdict.
 4. Synthesize trade-offs into one frontend recommendation.
 
 ## Default Output
 ```text
 FRONTEND TEAM REVIEW
 ====================
-Journey: main user flow, friction points
+Journey: main user flow, friction points, existing design leverage
 Implementation: state/rendering/integration risks
-Quality: accessibility gaps, responsive/failure-state issues
+Quality: accessibility gaps, responsive/failure-state issues, AI slop risk
 Recommendation: ship / revise / escalate, highest-priority fixes
 ```
 
@@ -46,4 +46,6 @@ Recommendation: ship / revise / escalate, highest-priority fixes
 
 ## Anti-Drift Rules
 - Do not expand into backend redesign under frontend review label.
+- Reuse proven design leverage before inventing new UI language.
+- Call out AI slop risk explicitly when it appears.
 - Accessibility and error states are shipping requirements, not nice-to-haves.

@@ -33,14 +33,31 @@ Both scripts:
 - link every skill folder from `.claude/skills/`
 - are safe to rerun
 - skip existing real directories they do not own
+- verify that `codex` can actually execute from shell and warn if Windows app packaging is blocking it
 
 ## Verify
 
 Restart Codex, then try:
 
 ```text
-Use $lead-producer to review this feature for security risks.
+Use $lead-producer to investigate why reward claims intermittently fail after reconnect. Find the root cause before fixing.
 ```
+
+## Windows Troubleshooting
+
+If `codex --version` fails with `Access is denied`, this is usually a local Codex install or app-alias issue, not a repo issue.
+
+Common signs:
+
+- `Get-Command codex` resolves to a path under `C:\Program Files\WindowsApps\...`
+- `%LOCALAPPDATA%\OpenAI\Codex\bin` is missing or stale
+- skills are linked correctly under `~/.codex/skills`, but the `codex` command itself will not start
+
+What to do:
+
+1. Launch the Codex app once and try `codex --version` again.
+2. If it still fails, reinstall Codex so the shell shim is restored.
+3. Re-run `.\scripts\install-codex.ps1`, then repeat the verify step above.
 
 ## Updating
 

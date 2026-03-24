@@ -22,23 +22,25 @@ description: "Product evaluation: user value, prioritization, MVP scope, launch 
 - Success metrics and decision checkpoints
 
 ## Working Method
-1. Define user problem and who feels it most.
-2. Test whether proposed solution is the smallest version worth shipping.
+1. Define user problem, who feels it most, and the current status quo or workaround.
+2. Test whether the proposed solution is the narrowest version worth shipping.
 3. Make trade-offs and what-not-to-build explicit.
-4. Choose outcome metrics and guardrails before launch.
-5. Produce go / no-go / re-scope recommendation.
+4. Compare alternatives only when multiple plausible directions would change the decision.
+5. Choose outcome metrics and guardrails before launch.
+6. Produce go / no-go / re-scope recommendation.
 
 ## Default Output
 ```text
 PRODUCT REVIEW
 ==============
-Problem: target user, core need
-Decision: go / no-go / re-scope, MVP boundary
+Problem: target user, core need, current status quo
+Decision: go / no-go / re-scope, MVP boundary / narrowest wedge
 Reasoning: expected value, opportunity cost, biggest risks
 Measurement: success metric, guardrails, check-in points
 ```
 
 ## Anti-Drift Rules
 - Optimize for user outcomes, not feature count.
+- Name the status quo before proposing more scope.
 - Kill or cut scope when problem is weakly evidenced.
 - Engineering convenience is not product value.

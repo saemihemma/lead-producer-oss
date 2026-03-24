@@ -1,20 +1,20 @@
 ---
 name: workflow-issue-triage
-description: "Bug investigation packaging: turns debugging work into a durable markdown artifact with reproduction, root cause, TDD fix plan, and handoff. Use when a bug needs a clean artifact for follow-up."
+description: "Bug handoff workflow: packages investigation findings into a durable markdown artifact with reproduction, root-cause summary, TDD fix plan, and ownership. Use when a bug needs a clean artifact for follow-up."
 ---
 # Issue Triage Workflow
 
 ## Purpose
-Packaging and handoff layer for debugging work. Turns investigation into a durable local artifact with clear next steps and ownership.
+Packaging and handoff layer for debugging work. Turns findings from prior investigation into a durable local artifact with clear next steps and ownership.
 
 ## Use When
-- Bug report or failure needs durable local artifact
-- Clean handoff needed after investigation
-- Dev Team or QA needs reproduction notes, acceptance criteria, fix slices in one place
-- Task spans debugging now and implementation later
+- Investigation findings need a durable local artifact
+- Clean handoff is needed after `workflow-systematic-debugging`, Dev Team, QA, or manual investigation
+- Reproduction notes, root-cause summary, acceptance criteria, and fix slices should live in one place
+- Task spans investigation now and implementation later
 
 ## Do NOT Use When
-- Need root-cause method itself (use systematic debugging)
+- Root cause is still unknown and the next step is investigation (use `workflow-systematic-debugging`)
 - Issue is already understood and user wants direct implementation
 - Task is feature request, not bug
 
@@ -22,15 +22,15 @@ Packaging and handoff layer for debugging work. Turns investigation into a durab
 Persist to `_artifacts/triage-<slug>.md`:
 - Problem
 - Reproduction
-- Root Cause Analysis
+- Root Cause Summary
 - TDD Fix Plan
 - Acceptance Criteria
 - Open Questions / Unknowns
 
 ## Packaging Workflow
-1. Capture investigation evidence.
+1. Capture the best investigation evidence available.
 2. Record tightest reliable reproduction.
-3. State root cause plainly; mark hypotheses separately from proven findings.
+3. State confirmed root cause plainly; if still unconfirmed, label the current best hypothesis and confidence.
 4. Package next fix steps as small TDD-oriented slices.
 5. Assign likely follow-up owner.
 6. Record what remains unknown.
@@ -53,5 +53,6 @@ Each slice should answer:
 ## Anti-Drift Rules
 - This workflow packages investigation results. It does not perform root-cause debugging.
 - If `_artifacts/` directory does not exist, ask the user where to save artifacts.
+- If the next best step is still root-cause investigation, route to `workflow-systematic-debugging` instead of guessing.
 - Name root cause plainly. Do not hide uncertainty behind confident language.
 - Make acceptance criteria observable and testable, not vague.
