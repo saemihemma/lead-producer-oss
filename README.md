@@ -11,9 +11,11 @@ angles on design, frontend, backend, product, QA, smart contracts, deployment, l
 iteration, and cleanup.
 
 Complex games that run from conception to live service are one of the hardest environments in
-software development. If a skill library can support MMO and live-service complexity, economies,
-progression, exploits, incidents, rollout risk, and tightly coupled systems, it becomes broadly
-useful across other software work too.
+software development. MMO-scale work punishes weak context and bad coordination, whether the team
+is human or agentic. That is why this library is tuned to stay lean on context and efficient on
+routing so agents can spend more attention on the development itself: economies, progression,
+exploits, incidents, rollout risk, and tightly coupled systems. If it can handle that, it becomes
+broadly useful across other software work too.
 
 50 AI skills: 28 specialist roles, 12 review teams, 9 structured workflows. Use it across the
 full product lifecycle: prototype, design, implementation, testing, deployment, live ops,
