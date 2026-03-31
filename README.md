@@ -17,7 +17,7 @@ routing so agents can spend more attention on the development itself: economies,
 exploits, incidents, rollout risk, and tightly coupled systems. If it can handle that, it becomes
 broadly useful across other software work too.
 
-51 total skills: 1 coordinator + 50 specialist skills (28 roles, 12 teams, 10 workflows). Use it
+57 total skills: 1 coordinator + 56 specialist skills (34 roles, 12 teams, 10 workflows). Use it
 across the full product lifecycle: prototype, design, implementation, testing, deployment, live
 ops, iteration, and code cleanup. It includes host guides for **Claude Code** and **OpenAI Codex**
 on macOS, Linux, and Windows. Windows is in good shape. macOS and Linux still need a quick real
@@ -101,6 +101,8 @@ dependency on any of them.
 AI-era testing guidance (TDD hazards, AI-generated test quality, evaluator independence) draws from
 Anthropic's [Harness Design for Long-Running Application Development](https://www.anthropic.com/engineering/harness-design-long-running-apps)
 and Halldór Fannar's [Your Tests Are Still the Real Assets](https://www.linkedin.com/pulse/your-tests-still-real-assets-halldor-fannar/) (Augmented newsletter, March 2026).
+Language-specific review expertise (C++, Go, Rust, Python, Kotlin, Java) adapted from
+Affaan's [everything-claude-code](https://github.com/affaan-m/everything-claude-code).
 
 You do not need to know the internal routing. Describe the problem. The Lead Producer figures out
 who to call, or whether to suggest a deeper play before routing.
@@ -200,7 +202,7 @@ back to this clone, so keep the repo where you installed it.
 
 ## What's Inside
 
-### 28 Specialist Roles
+### 34 Specialist Roles
 
 | Domain | Roles |
 |--------|-------|
@@ -214,6 +216,7 @@ back to this clone, so keep the repo where you installed it.
 | Leadership | CTO, Context Manager |
 | Brand and Community | Brand Strategist, Community Developer, UI/UX Designer |
 | Documentation | Technical Writer, Open Source Engineer, Code Reduction Engineer |
+| Language | C++ Engineer, Go Engineer, Rust Engineer, Python Engineer, Kotlin Engineer, Java Engineer |
 
 ### 12 Review Teams
 

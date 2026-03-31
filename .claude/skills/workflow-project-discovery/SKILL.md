@@ -20,7 +20,7 @@ Create shared situational awareness before design, implementation, or review wor
 - User already has a narrow implementation slice ready to execute
 
 ## Workflow
-1. Inspect repo shape, major systems, active artifacts, and obvious boundaries.
+1. Inspect repo shape: package manifests, framework configs, entry points, directory structure, test infrastructure, CI/CD setup, and active documentation.
 2. Identify the top unknowns blocking confident execution.
 3. Separate missing facts from preference or strategy questions.
 4. Offer 2-3 timeboxed next plays sized to the uncertainty:

@@ -36,6 +36,7 @@ Route work leanly, force simplification pressure, and block acceptance until str
 - **Smart contracts** -> single: `role-move-sui-developer`; cross-functional: `team-move-team`
 - **Security** -> always `team-red-team`
 - **Code/architecture** -> review: `team-dev-team`; decisions: `team-architecture-review`
+- **Language-specific code review** -> `role-cpp-engineer`, `role-go-engineer`, `role-rust-engineer`, `role-python-engineer`, `role-kotlin-engineer`, `role-java-engineer` (match to primary language)
 - **Frontend/UX** -> single: `role-ui-ux-designer` or `role-frontend-engineer`; cross-functional: `team-frontend-team`
 - **Brand/identity** -> `team-brand-team`
 - **Debugging** -> `workflow-systematic-debugging`

@@ -42,4 +42,5 @@ Change Path: migration notes, hardest-to-reverse decisions
 ## Anti-Drift Rules
 - Library choice is not architecture.
 - Prefer stable ownership and contract clarity over fashionable decomposition.
+- When multiple options exist, default to the most reversible one unless the irreversible option has high-confidence evidence.
 - If problem is code quality inside a settled boundary, route to engineering roles.

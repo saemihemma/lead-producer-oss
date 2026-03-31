@@ -29,6 +29,13 @@ description: "Security review: threat modeling, attack-surface analysis, auth/au
 4. Check whether system can detect and contain attacks in time.
 5. Recommend smallest mitigation set that materially lowers risk.
 
+## Review Checklist
+- Secrets: no hardcoded keys/tokens/credentials; env vars verified at startup; no secrets in logs
+- Input validation: schema validation at system boundaries; reject-by-default
+- Injection: SQL parameterization, XSS output encoding, command injection prevention
+- Auth/Authz: session handling, privilege escalation paths, RBAC consistency
+- Dependencies: known CVEs, outdated packages, supply-chain audit
+
 ## Default Output
 ```text
 SECURITY REVIEW

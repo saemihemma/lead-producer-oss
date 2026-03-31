@@ -43,4 +43,5 @@ Recommendation: highest-leverage improvements
 ## Anti-Drift Rules
 - Optimize for the next engineer, not cleverness.
 - "Shorter code" != "better design."
+- When reviewing AI-generated code, shift focus from style to behavior: regression coverage, edge-case assertions, interface contract stability, security assumptions. Style is automated; invariants are not.
 - Route architecture or security issues to the right owner.
