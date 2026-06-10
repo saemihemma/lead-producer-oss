@@ -19,7 +19,7 @@ Decide how an interface should feel to its callers. For module seams, API shapes
 - Immediate problem is reproducing a bug
 
 ## Workflow
-1. Restate the job the interface must do, including highest-cost mistakes.
+1. **Sharpen first.** Restate the job the interface must do and its highest-cost mistakes. If the requirements or callers are fuzzy, grill the open decisions one at a time before drafting options (see `workflow-requirements-grill`) — competing options are only meaningful once the job is clear.
 2. Identify primary callers, inputs, outputs, failure modes.
 3. Draft at least 3 genuinely different options (not cosmetic variants).
 4. Compare in prose: simplicity, generality, implementation efficiency, module depth.

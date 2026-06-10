@@ -24,11 +24,15 @@ description: "Code quality, maintainability, abstraction health, and technical d
 
 ## Working Method
 1. Find system parts future engineers touch most.
-2. Check whether abstractions reduce or increase cognitive load.
+2. Check whether abstractions reduce or increase cognitive load. Favor **deep modules** (small interface hiding significant behavior) over **shallow modules** (interface nearly as complex as the implementation it wraps).
 3. Inspect reliability, observability, and interface clarity.
 4. Distinguish essential from accidental complexity.
 5. Assess whether critical code paths have test coverage. Untested code carries higher debt weight regardless of code quality.
 6. Produce quality verdict with highest-value fixes first.
+
+## Depth Heuristics
+- **Deep vs shallow**: a good module hides more than its interface reveals. Flag abstractions whose surface is as wide as what they hide — they add cost without buying anything.
+- **Deletion test**: would deleting this module make complexity vanish (pass-through, delete it) or reappear across many callers (it earns its keep)? Use it to separate real abstractions from ceremony.
 
 ## Default Output
 ```text

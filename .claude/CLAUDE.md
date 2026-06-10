@@ -1,6 +1,6 @@
 # Lead Producer Pack - Claude Code Host Guide
 
-58 total skills: 1 coordinator + 57 specialist skills (34 roles, 12 teams, 11 workflows).
+61 total skills: 1 coordinator + 60 specialist skills (34 roles, 12 teams, 14 workflows).
 
 This file is Claude Code host guidance. Canonical skill content lives in `.claude/skills/`.
 Codex uses the same skill files through linked installs and follows `.codex/INSTALL.md` for
@@ -42,6 +42,21 @@ Use these after linking `.claude` into a project:
   Manual smoke expectation: first lines include `Route Now: workflow-specialist-hardening` and `Suggested Play: none`
 - `/lead-producer We're about to migrate all player wallets to the new contract in one irreversible cutover next week. Pressure-test what could go wrong before we commit.`
   Manual smoke expectation: first lines include `Route Now: none` and `Suggested Play: workflow-premortem`
+- `/lead-producer I want to add a new specialist skill to this pack for accessibility audits.`
+  Manual smoke expectation: first lines include `Route Now: workflow-author-skill` and `Suggested Play: none`
+- `/lead-producer We're ending for today; summarize this session so another agent can pick it up tomorrow.`
+  Manual smoke expectation: first lines include `Route Now: workflow-session-handoff` and `Suggested Play: none`
+- `/lead-producer I have a vague idea to "make the rewards feel better" but haven't thought it through. Grill me before we build anything.`
+  Manual smoke expectation: first lines include `Route Now: workflow-requirements-grill` and `Suggested Play: none`
+
+## Skill Lifecycle
+
+Skills carry an optional `status` frontmatter field:
+- No field -> active (the default; do not add `status: active`).
+- `status: draft` -> unfinished, not ready to route.
+- `status: deprecated` -> retired; include a one-line "replaced by `<skill-id>`" in the body.
+
+Lead Producer must not route to `draft` or `deprecated` skills. Use `workflow-author-skill` to add or formalize skills so routing, counts, and docs stay consistent.
 
 ## Hierarchy
 

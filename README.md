@@ -17,7 +17,7 @@ routing so agents can spend more attention on the development itself: economies,
 exploits, incidents, rollout risk, and tightly coupled systems. If it can handle that, it becomes
 broadly useful across other software work too.
 
-58 total skills: 1 coordinator + 57 specialist skills (34 roles, 12 teams, 11 workflows). Use it
+61 total skills: 1 coordinator + 60 specialist skills (34 roles, 12 teams, 14 workflows). Use it
 across the full product lifecycle: prototype, design, implementation, testing, deployment, live
 ops, iteration, and code cleanup. It includes host guides for **Claude Code** and **OpenAI Codex**
 on macOS, Linux, and Windows. Windows is in good shape. macOS and Linux still need a quick real
@@ -285,6 +285,7 @@ judgment, LP can recommend a deeper workflow without auto-running it:
 - `Suggested Play: workflow-project-discovery` for inherited repos, broad unknowns, or discovery-first work
 - `Suggested Play: workflow-current-state-capture` for bounded "what exists now" understanding before you change something
 - `Suggested Play: workflow-premortem` for high-stakes, irreversible, or high-blast-radius decisions you want failure-tested before commit
+- `Suggested Play: workflow-requirements-grill` for fuzzy requests you want sharpened — a Socratic interview that walks the open decisions one at a time before any specialist starts
 
 A suggested play is a recommendation, not an automatic route. If you want it, reply to LP with
 "use the project discovery play" or "help me understand the current state of this system," and LP
@@ -313,6 +314,16 @@ that imagines the decision has already failed, ranks the failure stories by like
 and attaches a leading indicator, mitigation, and owner to each before you commit. Pre-mortem is
 prospective ("assume failure, reason backward"); Devil's Advocate is reactive critique of the plan
 in front of you. Reply to LP with "run a pre-mortem" to opt in.
+
+## Sharpen, Hand Off, and Extend
+
+Three workflow skills support the work around the work:
+
+- **`workflow-requirements-grill`** — when a request is fuzzy, LP can interview you Socratically, walking the open decisions one at a time and recommending an answer for each, until the work is specified well enough to route. Grilling sharpens the plan; the pre-mortem then stress-tests it.
+- **`workflow-session-handoff`** — at the end of a long session, produces a durable `_artifacts/handoff-<slug>.md` so the next session or agent can resume cold: what was done, what is open, next steps, and which skills to use. (Use `role-context-manager` to keep a session going; use handoff to stop cleanly.)
+- **`workflow-author-skill`** — adds a new role, team, or workflow in pack conventions and wires it into routing, counts, smoke tests, and docs in one pass, so the pack stays consistent as it grows.
+
+Skills carry an optional `status` frontmatter field (`draft` or `deprecated`); LP will not route to either. Active skills carry no `status` field.
 
 ## Frontend Companion Tooling
 

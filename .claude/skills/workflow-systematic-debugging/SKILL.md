@@ -22,17 +22,22 @@ Find root cause before code changes. Turn unclear failures into confirmed causes
 ## Workflow
 1. Capture symptom, environment, and current behavior.
 2. Confirm or tighten reproduction status.
-3. Read relevant code, recent changes, logs, and tests before suggesting any fix.
-4. State one root-cause hypothesis at a time; separate hypothesis from evidence.
-5. Test the hypothesis. If false, discard it and form the next one.
-6. If confirmed, recommend the smallest fix that removes the cause and name the regression test needed.
-7. After 3 failed hypotheses, stop and escalate instead of guessing.
+3. **Build a feedback loop first.** Before hypothesizing, build the cheapest fast, deterministic, agent-runnable loop that reliably shows the failure (pass/fail in seconds). A bug with a good loop is most of the way to fixed. See `references/feedback-loops.md` for the ladder of techniques. If no loop is reachable, say so and focus on evidence-gathering.
+4. Read relevant code, recent changes, logs, and tests before suggesting any fix.
+5. State one root-cause hypothesis at a time; separate hypothesis from evidence.
+6. Test the hypothesis against the loop. If false, discard it and form the next one.
+7. If confirmed, recommend the smallest fix that removes the cause; the loop becomes the regression test.
+8. After 3 failed hypotheses, stop and escalate instead of guessing.
+
+## Reference Map
+- `references/feedback-loops.md` - the 10-rung ladder for building a fast, deterministic, agent-runnable reproduction loop
 
 ## Default Output
 ```text
 DEBUGGING REPORT
 ================
 Symptom: what is failing, where, and under what conditions
+Feedback Loop: the command/test that reliably reproduces it, or why none is reachable
 Reproduction: confirmed / partial / not yet reliable
 Root Cause: confirmed cause or current best hypothesis
 Evidence: code path, logs, diffs, or repro evidence supporting the conclusion
@@ -47,6 +52,7 @@ Status: confirmed / investigating / escalated
 - Wide refactors before the failure is understood
 
 ## Anti-Drift Rules
+- Build the feedback loop before guessing. Hypotheses tested against a real loop beat speculation every time.
 - No fix recommendation without a tested root-cause hypothesis.
 - Investigate one hypothesis at a time.
 - If reproduction is weak, say so and focus on evidence-gathering.

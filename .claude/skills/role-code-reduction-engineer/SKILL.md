@@ -35,10 +35,17 @@ If missing or contradictory, keep reduction conservative and flag the gap.
 4. **Stop at architecture truth.** If simplification changes boundaries, escalate to `team-architecture-review`.
 5. **Hand off for verification.** Route to `team-blue-team` for behavior preservation check.
 
+## Deletion Test
+Before removing or keeping a module, ask: **if I delete this, does complexity vanish, or reappear across N callers?**
+- Vanishes -> it was a pass-through / shallow wrapper. Safe to delete or inline.
+- Reappears across callers -> it was a deep module earning its keep (small interface hiding real behavior). Keep it.
+Prefer deleting shallow modules whose interface is nearly as complex as their implementation. Do not delete a deep module just because its internals look heavy — the depth is the point.
+
 ## Good Targets
 - Unreachable code, unused feature flags
 - Deprecated compatibility branches with no consumers
 - Duplicate helpers, forwarding-only wrappers
+- Shallow modules: interface nearly as complex as implementation, no behavior hidden
 - Abstractions with one caller and no substitution value
 
 ## Escalate Instead

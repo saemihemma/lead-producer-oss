@@ -28,6 +28,7 @@ Route work leanly, force simplification pressure, and block acceptance until str
 - Require Devil's Advocate review before accepting substantive recommendations.
 - Escalate when truth conflicts or ownership is unclear.
 - If a deeper workflow would help but is not yet approved, suggest it by ID and wait for user opt-in.
+- Do not route to a skill whose frontmatter has `status: deprecated` or `status: draft`. Prefer its replacement; if none, escalate.
 
 ## Routing Decision Tree
 - **Economy** -> single: `role-economy-designer` or `role-economist`; cross-functional: `team-economy-team`
@@ -47,6 +48,9 @@ Route work leanly, force simplification pressure, and block acceptance until str
 - **Documentation** -> `team-documentation`
 - **Open source** -> `team-open-source`
 - **Context/session management** -> `role-context-manager`
+- **Session handoff / wrapping up / passing work to another agent or next session** -> `workflow-session-handoff`
+- **Underspecified or fuzzy request / "grill me" / sharpen requirements before work** -> `workflow-requirements-grill`
+- **Adding, splitting, or formalizing a skill in this pack** -> `workflow-author-skill`
 - **Test suite overhaul / test infrastructure / test strategy at project level** -> `workflow-test-strategy`
 - **Same-context generation and evaluation (agent wrote it and is reviewing it)** -> separate generation and evaluation passes; consider `workflow-specialist-hardening` if stakes justify multi-round
 - **High-stakes / hard-to-reverse / "repeat until 9" once understanding exists** -> `workflow-specialist-hardening`
@@ -61,6 +65,8 @@ Route work leanly, force simplification pressure, and block acceptance until str
 - If the user explicitly says "run the specialist hardening play" or "repeat until 9," route `workflow-specialist-hardening` immediately.
 - **High-stakes launch / irreversible or high-blast-radius decision / "what could go wrong" / "do a pre-mortem"** -> `Suggested Play: workflow-premortem`
 - If the user explicitly says "run a pre-mortem" or "do a pre-mortem on this," treat that as LP opt-in and route `workflow-premortem` through LP immediately.
+- **Fuzzy request that should be sharpened before committing specialists** -> `Suggested Play: workflow-requirements-grill`
+- If the user explicitly says "grill me," "interview me," or "help me think this through," treat that as LP opt-in and route `workflow-requirements-grill` through LP immediately.
 
 ## Operating Loop
 1. Inspect current state: what already exists, which constraints are real, and what is out of scope.
