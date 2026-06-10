@@ -103,6 +103,8 @@ Anthropic's [Harness Design for Long-Running Application Development](https://ww
 and Halldór Fannar's [Your Tests Are Still the Real Assets](https://www.linkedin.com/pulse/your-tests-still-real-assets-halldor-fannar/) (Augmented newsletter, March 2026).
 Language-specific review expertise (C++, Go, Rust, Python, Kotlin, Java) adapted from
 Affaan's [everything-claude-code](https://github.com/affaan-m/everything-claude-code).
+Skill authoring, Socratic grilling, session handoff, feedback-loop-first debugging, and the
+deletion / deep-module tests draw from [Matt Pocock's skills library](https://github.com/mattpocock/skills).
 
 You do not need to know the internal routing. Describe the problem. The Lead Producer figures out
 who to call, or whether to suggest a deeper play before routing.
@@ -542,12 +544,6 @@ team has 5+ members or handles a high-risk domain.
 
 **Create a context overlay:** Create a separate pack with its own coordinator that maps the overlay
 modules to the generic roles in this pack.
-
----
-
-## Acknowledgments
-
-Several skills and techniques here were inspired by [Matt Pocock's skills library](https://github.com/mattpocock/skills) and adapted to fit this pack's Lead-Producer orchestration model: the skill-that-writes-skills (`workflow-author-skill`), Socratic grilling (`workflow-requirements-grill`), session handoff (`workflow-session-handoff`), feedback-loop-first debugging, the deletion / deep-module tests, and the ubiquitous-language glossary. Shoutout and thanks.
 
 ---
 
