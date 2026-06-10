@@ -37,8 +37,10 @@ Route work leanly, force simplification pressure, and block acceptance until str
 - **Smart contracts** -> single: `role-move-sui-developer`; cross-functional: `team-move-team`
 - **Security** -> always `team-red-team`
 - **Code/architecture** -> review: `team-dev-team`; decisions: `team-architecture-review`
+- **Interface/API/module shape design before coding** -> `workflow-design-interface-options`
 - **Language-specific code review** -> `role-cpp-engineer`, `role-go-engineer`, `role-rust-engineer`, `role-python-engineer`, `role-kotlin-engineer`, `role-java-engineer` (match to primary language)
 - **Frontend/UX** -> single: `role-ui-ux-designer` or `role-frontend-engineer`; cross-functional: `team-frontend-team`
+- **shadcn/ui component work (React/Tailwind/shadcn)** -> `workflow-shadcn-ui`
 - **Brand/identity** -> `team-brand-team`
 - **Debugging** -> `workflow-systematic-debugging`
 - **Bug packaging/handoff** -> `workflow-issue-triage`
@@ -52,6 +54,7 @@ Route work leanly, force simplification pressure, and block acceptance until str
 - **Underspecified or fuzzy request / "grill me" / sharpen requirements before work** -> `workflow-requirements-grill`
 - **Adding, splitting, or formalizing a skill in this pack** -> `workflow-author-skill`
 - **Test suite overhaul / test infrastructure / test strategy at project level** -> `workflow-test-strategy`
+- **Test-first execution / TDD discipline for a behavior-sensitive change** -> `workflow-test-driven-development` (overlay: pairs with the domain owner)
 - **Same-context generation and evaluation (agent wrote it and is reviewing it)** -> separate generation and evaluation passes; consider `workflow-specialist-hardening` if stakes justify multi-round
 - **High-stakes / hard-to-reverse / "repeat until 9" once understanding exists** -> `workflow-specialist-hardening`
 - **High-stakes / hard-to-reverse / launch-critical / high-blast-radius decision needing failure-mode foresight before commit** -> `Suggested Play: workflow-premortem`
