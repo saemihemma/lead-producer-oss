@@ -1,6 +1,6 @@
 # Lead Producer Pack - Claude Code Host Guide
 
-57 total skills: 1 coordinator + 56 specialist skills (34 roles, 12 teams, 10 workflows).
+58 total skills: 1 coordinator + 57 specialist skills (34 roles, 12 teams, 11 workflows).
 
 This file is Claude Code host guidance. Canonical skill content lives in `.claude/skills/`.
 Codex uses the same skill files through linked installs and follows `.codex/INSTALL.md` for
@@ -40,6 +40,8 @@ Use these after linking `.claude` into a project:
   Manual smoke expectation: first lines include `Route Now: none` and `Suggested Play: workflow-project-discovery`
 - `/lead-producer This payout rollback plan is high stakes. Run the specialist hardening play and repeat until 9.`
   Manual smoke expectation: first lines include `Route Now: workflow-specialist-hardening` and `Suggested Play: none`
+- `/lead-producer We're about to migrate all player wallets to the new contract in one irreversible cutover next week. Pressure-test what could go wrong before we commit.`
+  Manual smoke expectation: first lines include `Route Now: none` and `Suggested Play: workflow-premortem`
 
 ## Hierarchy
 

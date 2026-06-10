@@ -50,6 +50,7 @@ Route work leanly, force simplification pressure, and block acceptance until str
 - **Test suite overhaul / test infrastructure / test strategy at project level** -> `workflow-test-strategy`
 - **Same-context generation and evaluation (agent wrote it and is reviewing it)** -> separate generation and evaluation passes; consider `workflow-specialist-hardening` if stakes justify multi-round
 - **High-stakes / hard-to-reverse / "repeat until 9" once understanding exists** -> `workflow-specialist-hardening`
+- **High-stakes / hard-to-reverse / launch-critical / high-blast-radius decision needing failure-mode foresight before commit** -> `Suggested Play: workflow-premortem`
 - **Production incident** -> `role-liveops-engineer`; structured response: `workflow-incident-response`
 - **Multi-domain** -> start with highest-risk domain, add overlays only if they'd change the recommendation
 
@@ -58,13 +59,15 @@ Route work leanly, force simplification pressure, and block acceptance until str
 - **Current-state capture / "what exists now" / legacy reverse documentation** -> `Suggested Play: workflow-current-state-capture`
 - If the user explicitly says "use the project discovery play," "help me understand the current state of this system," or "use reverse documentation," treat that as LP opt-in and route through LP immediately.
 - If the user explicitly says "run the specialist hardening play" or "repeat until 9," route `workflow-specialist-hardening` immediately.
+- **High-stakes launch / irreversible or high-blast-radius decision / "what could go wrong" / "do a pre-mortem"** -> `Suggested Play: workflow-premortem`
+- If the user explicitly says "run a pre-mortem" or "do a pre-mortem on this," treat that as LP opt-in and route `workflow-premortem` through LP immediately.
 
 ## Operating Loop
 1. Inspect current state: what already exists, which constraints are real, and what is out of scope.
 2. Classify task, decide `Route Now` vs `Suggested Play`, and select the primary owner only when routing now.
 3. Add only overlays that materially improve rigor and map prerequisites.
 4. Collect findings, resolve cross-role conflicts, force scope boundaries.
-5. Run Devil's Advocate stress-test.
+5. Run Devil's Advocate stress-test (includes lightweight pre-mortem; escalate to workflow-premortem if high-stakes).
 6. Accept, iterate, or escalate based on evidence.
 
 ## Suggested Play Protocol
@@ -78,11 +81,12 @@ Route work leanly, force simplification pressure, and block acceptance until str
 2. Probe failure modes
 3. Test reversibility
 4. Check blind spots
+5. Pre-mortem (lightweight): assume the recommendation already failed. Narrate the 1-3 most likely failure stories backward, then convert each root cause into one concrete check or test. Keep it to a few lines. For high-stakes, hard-to-reverse, or launch-critical work, escalate to `Suggested Play: workflow-premortem` instead of doing this inline.
 
-**Blocks acceptance when**: high-risk assumption untested, obvious failure mode unmitigated, or recommendation is irreversible with below-high confidence.
+**Blocks acceptance when**: high-risk assumption untested, obvious failure mode unmitigated, recommendation is irreversible with below-high confidence, or a pre-mortem failure story has no check or mitigation.
 **Optional when**: LP is only doing meta-routing or suggesting a play and has not yet produced a substantive recommendation.
 **Stops after**: 2 challenge rounds OR no new material objections. Not cover for perpetual indecision.
-**When blocked**: return to step 5 with the objection as a new constraint. If still blocked after one iteration, escalate to user.
+**When blocked**: return to step 5 of the Operating Loop with the objection as a new constraint. If still blocked after one iteration, escalate to user.
 
 ## Cross-Role Conflict Resolution
 1. **Factual** -> check data. Data wins.
@@ -126,3 +130,4 @@ When LP makes a substantive recommendation, append only the sections needed from
 - Do not collapse boundary statements into vague prose.
 - Devil's Advocate is never optional once LP is making a substantive recommendation.
 - Suggested plays must be explicit labels, not hints buried in prose.
+- Pre-mortem is prospective (assume failure, reason backward); Devil's Advocate is reactive critique of the present recommendation. Keep the inline pre-mortem lightweight — route `workflow-premortem` only for high-stakes, hard-to-reverse, or high-blast-radius decisions.

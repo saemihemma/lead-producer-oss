@@ -17,7 +17,7 @@ routing so agents can spend more attention on the development itself: economies,
 exploits, incidents, rollout risk, and tightly coupled systems. If it can handle that, it becomes
 broadly useful across other software work too.
 
-57 total skills: 1 coordinator + 56 specialist skills (34 roles, 12 teams, 10 workflows). Use it
+58 total skills: 1 coordinator + 57 specialist skills (34 roles, 12 teams, 11 workflows). Use it
 across the full product lifecycle: prototype, design, implementation, testing, deployment, live
 ops, iteration, and code cleanup. It includes host guides for **Claude Code** and **OpenAI Codex**
 on macOS, Linux, and Windows. Windows is in good shape. macOS and Linux still need a quick real
@@ -284,6 +284,7 @@ judgment, LP can recommend a deeper workflow without auto-running it:
 
 - `Suggested Play: workflow-project-discovery` for inherited repos, broad unknowns, or discovery-first work
 - `Suggested Play: workflow-current-state-capture` for bounded "what exists now" understanding before you change something
+- `Suggested Play: workflow-premortem` for high-stakes, irreversible, or high-blast-radius decisions you want failure-tested before commit
 
 A suggested play is a recommendation, not an automatic route. If you want it, reply to LP with
 "use the project discovery play" or "help me understand the current state of this system," and LP
@@ -302,6 +303,16 @@ When the stakes are high or you explicitly want deeper pressure, LP can route di
 keeps going until the work clears the quality bar, needs a real user decision, or stops improving.
 Use it after discovery or current-state capture when understanding exists and the remaining problem
 is quality.
+
+## Pre-Mortem
+
+Every substantive recommendation already gets a lightweight pre-mortem inside the Devil's Advocate
+pass: assume it failed, narrate why, convert each cause into a check. For a hard-to-reverse,
+launch-critical, or high-blast-radius decision, LP can suggest `workflow-premortem` — a deeper pass
+that imagines the decision has already failed, ranks the failure stories by likelihood and impact,
+and attaches a leading indicator, mitigation, and owner to each before you commit. Pre-mortem is
+prospective ("assume failure, reason backward"); Devil's Advocate is reactive critique of the plan
+in front of you. Reply to LP with "run a pre-mortem" to opt in.
 
 ## Frontend Companion Tooling
 
