@@ -39,6 +39,7 @@ Route work leanly, force simplification pressure, and block acceptance until str
 - **Code/architecture** -> review: `team-dev-team`; decisions: `team-architecture-review`
 - **Interface/API/module shape design before coding** -> `workflow-design-interface-options`
 - **Language-specific code review** -> `role-cpp-engineer`, `role-go-engineer`, `role-rust-engineer`, `role-python-engineer`, `role-kotlin-engineer`, `role-java-engineer` (match to primary language)
+- **Game engine code (Godot / GDScript / scene-node architecture)** -> `role-godot-engineer`
 - **Frontend/UX** -> single: `role-ui-ux-designer` or `role-frontend-engineer`; cross-functional: `team-frontend-team`
 - **shadcn/ui component work (React/Tailwind/shadcn)** -> `workflow-shadcn-ui`
 - **Brand/identity** -> `team-brand-team`

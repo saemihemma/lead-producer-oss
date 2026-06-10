@@ -17,7 +17,7 @@ routing so agents can spend more attention on the development itself: economies,
 exploits, incidents, rollout risk, and tightly coupled systems. If it can handle that, it becomes
 broadly useful across other software work too.
 
-64 total skills: 1 coordinator + 63 specialist skills (37 roles, 12 teams, 14 workflows). Use it
+65 total skills: 1 coordinator + 64 specialist skills (38 roles, 12 teams, 14 workflows). Use it
 across the full product lifecycle: prototype, design, implementation, testing, deployment, live
 ops, iteration, and code cleanup. It includes host guides for **Claude Code** and **OpenAI Codex**
 on macOS, Linux, and Windows. Windows is in good shape. macOS and Linux still need a quick real
@@ -105,6 +105,8 @@ Language-specific review expertise (C++, Go, Rust, Python, Kotlin, Java) adapted
 Affaan's [everything-claude-code](https://github.com/affaan-m/everything-claude-code).
 Skill authoring, Socratic grilling, session handoff, feedback-loop-first debugging, and the
 deletion / deep-module tests draw from [Matt Pocock's skills library](https://github.com/mattpocock/skills).
+Godot engine practices draw from [Claude Code Game Studios](https://github.com/donchitos/claude-code-game-studios),
+[GodotPrompter](https://github.com/jame581/GodotPrompter), and the community `godot-best-practices` and `gdscript-patterns` skills.
 
 You do not need to know the internal routing. Describe the problem. The Lead Producer figures out
 who to call, or whether to suggest a deeper play before routing.
@@ -204,7 +206,7 @@ back to this clone, so keep the repo where you installed it.
 
 ## What's Inside
 
-### 37 Specialist Roles
+### 38 Specialist Roles
 
 | Domain | Roles |
 |--------|-------|
@@ -212,6 +214,7 @@ back to this clone, so keep the repo where you installed it.
 | Game Design | Game Designer, Narrative Designer, Level & Content Designer |
 | Product | Product Manager, Technical Product Manager |
 | Engineering | Backend, Frontend, Principal Software, Software Architect, Scalability |
+| Engine | Godot Engineer |
 | Smart Contracts | Move/Sui Developer |
 | Security and QA | Security Engineer, QA Engineer |
 | Infrastructure | DevOps, Railway Deployment, LiveOps Engineer |
