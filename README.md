@@ -17,7 +17,7 @@ routing so agents can spend more attention on the development itself: economies,
 exploits, incidents, rollout risk, and tightly coupled systems. If it can handle that, it becomes
 broadly useful across other software work too.
 
-61 total skills: 1 coordinator + 60 specialist skills (34 roles, 12 teams, 14 workflows). Use it
+64 total skills: 1 coordinator + 63 specialist skills (37 roles, 12 teams, 14 workflows). Use it
 across the full product lifecycle: prototype, design, implementation, testing, deployment, live
 ops, iteration, and code cleanup. It includes host guides for **Claude Code** and **OpenAI Codex**
 on macOS, Linux, and Windows. Windows is in good shape. macOS and Linux still need a quick real
@@ -204,19 +204,20 @@ back to this clone, so keep the repo where you installed it.
 
 ## What's Inside
 
-### 34 Specialist Roles
+### 37 Specialist Roles
 
 | Domain | Roles |
 |--------|-------|
 | Economy and Balance | Economy Designer, Economist, Behavioral Economist, Game Balance Designer |
-| Game Design | Game Designer, Product Manager, Technical Product Manager |
+| Game Design | Game Designer, Narrative Designer, Level & Content Designer |
+| Product | Product Manager, Technical Product Manager |
 | Engineering | Backend, Frontend, Principal Software, Software Architect, Scalability |
 | Smart Contracts | Move/Sui Developer |
 | Security and QA | Security Engineer, QA Engineer |
 | Infrastructure | DevOps, Railway Deployment, LiveOps Engineer |
 | Data | Analytics Engineer, Data Engineer |
 | Leadership | CTO, Context Manager |
-| Brand and Community | Brand Strategist, Community Developer, UI/UX Designer |
+| Brand, Marketing and Community | Brand Strategist, Product Marketing Manager, Community Developer, UI/UX Designer |
 | Documentation | Technical Writer, Open Source Engineer, Code Reduction Engineer |
 | Language | C++ Engineer, Go Engineer, Rust Engineer, Python Engineer, Kotlin Engineer, Java Engineer |
 

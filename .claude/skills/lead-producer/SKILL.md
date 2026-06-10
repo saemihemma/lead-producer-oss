@@ -32,7 +32,7 @@ Route work leanly, force simplification pressure, and block acceptance until str
 
 ## Routing Decision Tree
 - **Economy** -> single: `role-economy-designer` or `role-economist`; cross-functional: `team-economy-team`
-- **Game design** -> single: `role-game-designer` or `role-game-balance-designer`; cross-functional: `team-product-team`
+- **Game design** -> single: `role-game-designer` (experience/loops), `role-narrative-designer` (story/quests), `role-level-designer` (spatial/encounter), or `role-game-balance-designer` (numbers); cross-functional: `team-product-team`
 - **Product evaluation** -> single: `role-product-manager`; cross-functional: `team-product-team`
 - **Smart contracts** -> single: `role-move-sui-developer`; cross-functional: `team-move-team`
 - **Security** -> always `team-red-team`
@@ -42,6 +42,7 @@ Route work leanly, force simplification pressure, and block acceptance until str
 - **Frontend/UX** -> single: `role-ui-ux-designer` or `role-frontend-engineer`; cross-functional: `team-frontend-team`
 - **shadcn/ui component work (React/Tailwind/shadcn)** -> `workflow-shadcn-ui`
 - **Brand/identity** -> `team-brand-team`
+- **Go-to-market / launch / product marketing / competitive positioning** -> `role-product-marketing-manager`
 - **Debugging** -> `workflow-systematic-debugging`
 - **Bug packaging/handoff** -> `workflow-issue-triage`
 - **Dead code/cleanup** -> `role-code-reduction-engineer` -> verify with `team-blue-team`
