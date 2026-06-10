@@ -235,16 +235,20 @@ back to this clone, so keep the repo where you installed it.
 | Blue Team | Cleanup verification - dead code removal, regression check |
 | Open Source | OSS readiness - licensing, contribution guides, API surface |
 
-### 10 Workflows
+### 14 Workflows
 
 | Workflow | When To Use |
 |----------|-------------|
 | Project Discovery | Inherited repos, broad unknowns, or "understand this first" situations |
 | Current State Capture | Bounded subsystem orientation, current-reality understanding, and newcomer handoff |
 | Specialist Hardening | Repeated 3-reviewer rounds for high-stakes or hard-to-reverse work |
+| Pre-Mortem | Assume a hard-to-reverse decision failed; surface failure modes before commit |
 | Incident Response | Production is broken. Detect -> triage -> act -> postmortem |
-| Systematic Debugging | Unknown bug or failure. Reproduce -> hypothesize -> test -> confirm root cause |
+| Systematic Debugging | Unknown bug or failure. Build a feedback loop -> hypothesize -> test -> confirm root cause |
 | Issue Triage | Package debugging findings into a durable handoff artifact |
+| Requirements Grill | Sharpen a fuzzy request via Socratic interview before specialists start |
+| Session Handoff | Compact a session into a durable artifact for the next agent or session |
+| Author Skill | Add a new role/team/workflow in pack conventions and wire it into routing and docs |
 | Test-Driven Development | Behavior-sensitive changes need disciplined execution |
 | Test Strategy | Project-level test suite audit, rearchitecture, and migration planning |
 | Design Interface Options | Compare 3 interface approaches side-by-side |
@@ -538,6 +542,12 @@ team has 5+ members or handles a high-risk domain.
 
 **Create a context overlay:** Create a separate pack with its own coordinator that maps the overlay
 modules to the generic roles in this pack.
+
+---
+
+## Acknowledgments
+
+Several skills and techniques here were inspired by [Matt Pocock's skills library](https://github.com/mattpocock/skills) and adapted to fit this pack's Lead-Producer orchestration model: the skill-that-writes-skills (`workflow-author-skill`), Socratic grilling (`workflow-requirements-grill`), session handoff (`workflow-session-handoff`), feedback-loop-first debugging, the deletion / deep-module tests, and the ubiquitous-language glossary. Shoutout and thanks.
 
 ---
 
