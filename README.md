@@ -17,7 +17,7 @@ routing so agents can spend more attention on the development itself: economies,
 exploits, incidents, rollout risk, and tightly coupled systems. If it can handle that, it becomes
 broadly useful across other software work too.
 
-65 total skills: 1 coordinator + 64 specialist skills (38 roles, 12 teams, 14 workflows). Use it
+68 total skills: 1 coordinator + 67 specialist skills (41 roles, 12 teams, 14 workflows). Use it
 across the full product lifecycle: prototype, design, implementation, testing, deployment, live
 ops, iteration, and code cleanup. It includes host guides for **Claude Code** and **OpenAI Codex**
 on macOS, Linux, and Windows. Windows is in good shape. macOS and Linux still need a quick real
@@ -206,7 +206,7 @@ back to this clone, so keep the repo where you installed it.
 
 ## What's Inside
 
-### 38 Specialist Roles
+### 41 Specialist Roles
 
 | Domain | Roles |
 |--------|-------|
@@ -214,15 +214,21 @@ back to this clone, so keep the repo where you installed it.
 | Game Design | Game Designer, Narrative Designer, Level & Content Designer |
 | Product | Product Manager, Technical Product Manager |
 | Engineering | Backend, Frontend, Principal Software, Software Architect, Scalability |
-| Engine | Godot Engineer |
+| Engine | Godot Engineer, Unity Engineer |
 | Smart Contracts | Move/Sui Developer |
 | Security and QA | Security Engineer, QA Engineer |
 | Infrastructure | DevOps, Railway Deployment, LiveOps Engineer |
-| Data | Analytics Engineer, Data Engineer |
+| Data | Analytics Engineer, Data Engineer, Database Engineer |
 | Leadership | CTO, Context Manager |
 | Brand, Marketing and Community | Brand Strategist, Product Marketing Manager, Community Developer, UI/UX Designer |
 | Documentation | Technical Writer, Open Source Engineer, Code Reduction Engineer |
-| Language | C++ Engineer, Go Engineer, Rust Engineer, Python Engineer, Kotlin Engineer, Java Engineer |
+| Language | C++ Engineer, Go Engineer, Rust Engineer, Python Engineer, Kotlin Engineer, Java Engineer, TypeScript Engineer |
+
+Not every role has its own line in Lead Producer's route table. Some roles are routed directly
+for single-domain asks; others contribute mainly as members of the review teams below (for
+example, the Security Engineer works inside Red Team). Both are first-class — the routing canon
+in [`.claude/skills/lead-producer/SKILL.md`](.claude/skills/lead-producer/SKILL.md) decides
+which entry point fits the task, so describe the problem rather than picking the specialist.
 
 ### 12 Review Teams
 
@@ -346,141 +352,20 @@ that makes frontend review and debugging more trustworthy.
 
 ## More Examples
 
-### Production incident
+Every prompt below works in Claude Code as `/lead-producer <prompt>` and in Codex as
+`Use $lead-producer to <prompt>`. The canonical smoke-test list (with expected first lines)
+lives in [`.claude/CLAUDE.md`](.claude/CLAUDE.md); these illustrate the routing range.
 
-**Claude Code**
-
-```text
-/lead-producer Respond to a production incident: players can't mint.
-```
-
-**Codex**
-
-```text
-Use $lead-producer to respond to a production incident: players can't mint.
-```
-
-Manual smoke expectation: first lines include `Route Now: workflow-incident-response` and
-`Suggested Play: none`
-
-### When specialists disagree
-
-**Claude Code**
-
-```text
-/lead-producer Can we add PvP loot drops without breaking the economy?
-```
-
-**Codex**
-
-```text
-Use $lead-producer to assess whether PvP loot drops would break the economy.
-```
-
-Manual smoke expectation: first lines include `Route Now: team-economy-team` and
-`Suggested Play: none`
-
-### UI design comparison
-
-**Claude Code**
-
-```text
-/lead-producer Design three options for guild management UI
-```
-
-**Codex**
-
-```text
-Use $lead-producer to design three options for guild management UI.
-```
-
-Manual smoke expectation: first lines include `Route Now: workflow-design-interface-options` and
-`Suggested Play: none`
-
-### Unknown bug investigation
-
-**Claude Code**
-
-```text
-/lead-producer Investigate why reward claims intermittently fail after reconnect. Find the root cause before fixing.
-```
-
-**Codex**
-
-```text
-Use $lead-producer to investigate why reward claims intermittently fail after reconnect. Find the root cause before fixing.
-```
-
-Manual smoke expectation: first lines include `Route Now: workflow-systematic-debugging` and
-`Suggested Play: none`
-
-### Debugging handoff
-
-**Claude Code**
-
-```text
-/lead-producer Package this debugging result into a handoff artifact for the next engineer.
-```
-
-**Codex**
-
-```text
-Use $lead-producer to package this debugging result into a handoff artifact for the next engineer.
-```
-
-Manual smoke expectation: first lines include `Route Now: workflow-issue-triage` and
-`Suggested Play: none`
-
-### Discovery-first repo mapping
-
-**Claude Code**
-
-```text
-/lead-producer This codebase is inherited and messy. Figure out whether we should do a focused architecture spike or a broader discovery pass first.
-```
-
-**Codex**
-
-```text
-Use $lead-producer to assess this inherited repo and suggest the right discovery play before implementation.
-```
-
-Manual smoke expectation: first lines include `Route Now: none` and
-`Suggested Play: workflow-project-discovery`
-
-### Current-state capture for a new owner
-
-**Claude Code**
-
-```text
-/lead-producer Help me understand the current state of the reward claim flow before we change it.
-```
-
-**Codex**
-
-```text
-Use $lead-producer to help me understand the current state of the reward claim flow before we change it.
-```
-
-Manual smoke expectation: first lines include `Route Now: workflow-current-state-capture` and
-`Suggested Play: none`
-
-### Specialist hardening
-
-**Claude Code**
-
-```text
-/lead-producer This payout rollback plan is high stakes. Run the specialist hardening play and repeat until 9.
-```
-
-**Codex**
-
-```text
-Use $lead-producer to run the specialist hardening play on this launch-critical payout rollback plan. Repeat until 9.
-```
-
-Manual smoke expectation: first lines include `Route Now: workflow-specialist-hardening` and
-`Suggested Play: none`
+| Ask | Expected route |
+|-----|----------------|
+| Respond to a production incident: players can't mint. | `Route Now: workflow-incident-response` |
+| Can we add PvP loot drops without breaking the economy? | `Route Now: team-economy-team` |
+| Design three options for guild management UI. | `Route Now: workflow-design-interface-options` |
+| Investigate why reward claims intermittently fail after reconnect. Find the root cause before fixing. | `Route Now: workflow-systematic-debugging` |
+| Package this debugging result into a handoff artifact for the next engineer. | `Route Now: workflow-issue-triage` |
+| Help me understand the current state of the reward claim flow before we change it. | `Route Now: workflow-current-state-capture` |
+| This codebase is inherited and messy — should we spike or do discovery first? | `Suggested Play: workflow-project-discovery` |
+| This payout rollback plan is high stakes. Run the specialist hardening play and repeat until 9. | `Route Now: workflow-specialist-hardening` |
 
 ---
 
@@ -509,9 +394,12 @@ lead-producer/
 |       `-- ...
 |-- .codex/
 |   `-- INSTALL.md                    # Codex host guide
+|-- .github/
+|   `-- workflows/validate.yml        # CI: runs the pack validator
 |-- scripts/
 |   |-- install-codex.sh              # macOS/Linux Codex installer
-|   `-- install-codex.ps1             # Windows Codex installer
+|   |-- install-codex.ps1             # Windows Codex installer
+|   `-- validate-skills.py            # pack consistency validator
 |-- whenupdating.md                   # maintenance checklist
 |-- README.md
 |-- LICENSE
@@ -542,6 +430,8 @@ description: "What this role does in one line"
 
 Then update `.claude/skills/lead-producer/SKILL.md` with any runtime-facing routing change.
 Mirror that change in `.claude/CLAUDE.md` only when the Claude host guidance also needs it.
+Inside this pack, `workflow-author-skill` does all of that wiring in one pass. Either way, finish
+with `python3 scripts/validate-skills.py` — CI runs the same check on every push.
 
 **Add a team:** Same structure, plus `context: fork` in frontmatter. Add `effort: high` if the
 team has 5+ members or handles a high-risk domain.
