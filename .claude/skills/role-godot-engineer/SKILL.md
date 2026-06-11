@@ -15,7 +15,8 @@ description: "Godot 4 / GDScript engine review: scene-node architecture, signals
 - Game experience, core loops, or motivation (use `role-game-designer`)
 - Level/encounter design intent (use `role-level-designer`) — you own the engine *realization*, not the intent
 - Combat/progression numbers (use `role-game-balance-designer`)
-- Non-Godot language review (use the matching language role); C#-in-Godot can overlay a language role, but GDScript and engine wiring are owned here
+- Unity code (use `role-unity-engineer`)
+- Non-Godot language review (use the matching language role); C#-in-Godot can overlay `role-unity-engineer` for C# idioms, but GDScript and engine wiring are owned here
 
 ## What You Own
 - GDScript idioms and static typing discipline

@@ -38,8 +38,8 @@ Route work leanly, force simplification pressure, and block acceptance until str
 - **Security** -> always `team-red-team`
 - **Code/architecture** -> review: `team-dev-team`; decisions: `team-architecture-review`
 - **Interface/API/module shape design before coding** -> `workflow-design-interface-options`
-- **Language-specific code review** -> `role-cpp-engineer`, `role-go-engineer`, `role-rust-engineer`, `role-python-engineer`, `role-kotlin-engineer`, `role-java-engineer` (match to primary language)
-- **Game engine code (Godot / GDScript / scene-node architecture)** -> `role-godot-engineer`
+- **Language-specific code review** -> `role-cpp-engineer`, `role-go-engineer`, `role-rust-engineer`, `role-python-engineer`, `role-kotlin-engineer`, `role-java-engineer`, `role-typescript-engineer` (match to primary language; C# -> `role-unity-engineer`)
+- **Game engine code** -> Godot/GDScript: `role-godot-engineer`; Unity/C#: `role-unity-engineer`
 - **Frontend/UX** -> single: `role-ui-ux-designer` or `role-frontend-engineer`; cross-functional: `team-frontend-team`
 - **shadcn/ui component work (React/Tailwind/shadcn)** -> `workflow-shadcn-ui`
 - **Brand/identity** -> `team-brand-team`
@@ -49,6 +49,9 @@ Route work leanly, force simplification pressure, and block acceptance until str
 - **Dead code/cleanup** -> `role-code-reduction-engineer` -> verify with `team-blue-team`
 - **Infra** -> `team-infrastructure`
 - **Data pipelines** -> single: `role-data-engineer`; cross-functional: `team-infrastructure`
+- **Database itself (schema, query performance, indexing, migrations)** -> `role-database-engineer`
+- **Metrics/KPI/telemetry trustworthiness** -> `role-analytics-engineer`
+- **Test coverage/strategy for a single change** -> `role-qa-engineer`; project-level suite overhaul stays with `workflow-test-strategy`
 - **Documentation** -> `team-documentation`
 - **Open source** -> `team-open-source`
 - **Context/session management** -> `role-context-manager`
@@ -64,14 +67,18 @@ Route work leanly, force simplification pressure, and block acceptance until str
 - **Multi-domain** -> start with highest-risk domain, add overlays only if they'd change the recommendation
 
 ## Suggested Plays
+Triggers:
 - **Inherited project / broad unknowns / repo mapping / "do discovery or R&D first"** -> `Suggested Play: workflow-project-discovery`
 - **Current-state capture / "what exists now" / legacy reverse documentation** -> `Suggested Play: workflow-current-state-capture`
-- If the user explicitly says "use the project discovery play," "help me understand the current state of this system," or "use reverse documentation," treat that as LP opt-in and route through LP immediately.
-- If the user explicitly says "run the specialist hardening play" or "repeat until 9," route `workflow-specialist-hardening` immediately.
 - **High-stakes launch / irreversible or high-blast-radius decision / "what could go wrong" / "do a pre-mortem"** -> `Suggested Play: workflow-premortem`
-- If the user explicitly says "run a pre-mortem" or "do a pre-mortem on this," treat that as LP opt-in and route `workflow-premortem` through LP immediately.
 - **Fuzzy request that should be sharpened before committing specialists** -> `Suggested Play: workflow-requirements-grill`
-- If the user explicitly says "grill me," "interview me," or "help me think this through," treat that as LP opt-in and route `workflow-requirements-grill` through LP immediately.
+
+Explicit opt-in phrases (treat as LP opt-in; route through LP immediately):
+- "use the project discovery play" -> `workflow-project-discovery`
+- "help me understand the current state of this system" or "use reverse documentation" -> `workflow-current-state-capture`
+- "run a pre-mortem" or "do a pre-mortem on this" -> `workflow-premortem`
+- "grill me," "interview me," or "help me think this through" -> `workflow-requirements-grill`
+- "run the specialist hardening play" or "repeat until 9" -> `workflow-specialist-hardening` (Route Now skill; listed here because the phrase is an explicit trigger)
 
 ## Operating Loop
 1. Inspect current state: what already exists, which constraints are real, and what is out of scope.

@@ -14,6 +14,7 @@ description: "Data pipeline review: schema contracts, freshness SLAs, ETL reliab
 - Deciding what business metrics should mean
 - Product strategy or experiment prioritization
 - General API design outside the data contract
+- Operational schema design, query tuning, or migrations in the application database (use `role-database-engineer`)
 
 ## What You Own
 - Source contracts and change handling

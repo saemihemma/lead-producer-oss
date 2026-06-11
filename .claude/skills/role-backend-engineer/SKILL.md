@@ -13,6 +13,7 @@ description: "Backend systems review: APIs, database access, concurrency, cachin
 - Problem is UI behavior or accessibility
 - Task is deployment/platform ops with no backend ownership question
 - Ask is product strategy rather than server-side correctness
+- Deep schema design, index tuning, or migration planning (use `role-database-engineer`) — you own how the service uses the database, not the database itself
 
 ## What You Own
 - API contracts and validation

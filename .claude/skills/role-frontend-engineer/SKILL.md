@@ -14,6 +14,7 @@ description: "Frontend systems review: components, state management, rendering p
 - Backend API ownership or database design
 - Deployment and infrastructure decisions
 - Product prioritization without implementation context
+- TypeScript/JavaScript language-level review with no architecture question (use `role-typescript-engineer`)
 
 ## What You Own
 - Component boundaries and data flow

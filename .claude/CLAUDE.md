@@ -1,6 +1,6 @@
 # Lead Producer Pack - Claude Code Host Guide
 
-65 total skills: 1 coordinator + 64 specialist skills (38 roles, 12 teams, 14 workflows).
+68 total skills: 1 coordinator + 67 specialist skills (41 roles, 12 teams, 14 workflows).
 
 This file is Claude Code host guidance. Canonical skill content lives in `.claude/skills/`.
 Codex uses the same skill files through linked installs and follows `.codex/INSTALL.md` for
@@ -56,6 +56,12 @@ Use these after linking `.claude` into a project:
   Manual smoke expectation: first lines include `Route Now: role-product-marketing-manager` and `Suggested Play: none`
 - `/lead-producer Review my Godot scene architecture and GDScript for performance and pattern issues.`
   Manual smoke expectation: first lines include `Route Now: role-godot-engineer` and `Suggested Play: none`
+- `/lead-producer Review this TypeScript service for type safety and async correctness.`
+  Manual smoke expectation: first lines include `Route Now: role-typescript-engineer` and `Suggested Play: none`
+- `/lead-producer Review my Unity MonoBehaviours and prefab structure for GC pressure and lifecycle issues.`
+  Manual smoke expectation: first lines include `Route Now: role-unity-engineer` and `Suggested Play: none`
+- `/lead-producer This query is slow and the migration touches our biggest table — review the schema, indexes, and rollout plan.`
+  Manual smoke expectation: first lines include `Route Now: role-database-engineer` and `Suggested Play: none`
 
 ## Skill Lifecycle
 
