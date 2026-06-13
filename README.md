@@ -129,22 +129,67 @@ instructions.
 
 ### Claude Code
 
+Pick one of the three install paths below.
+
+#### Always available + auto-updating (recommended)
+
+This links every skill into your user-level `~/.claude/skills`, so `/lead-producer` and all
+specialists work in **every** Claude Code project — not just one. It also registers a
+`SessionStart` hook that pulls the latest pack and reloads skills at the start of each session, so
+the install stays up to date on its own.
+
+**macOS / Linux**
+
+```bash
+git clone https://github.com/saemihemma/lead-producer-oss.git
+cd lead-producer-oss
+bash scripts/install-claude.sh
+```
+
+**Windows (PowerShell)**
+
+```powershell
+git clone https://github.com/saemihemma/lead-producer-oss.git
+Set-Location lead-producer-oss
+powershell -ExecutionPolicy Bypass -File .\scripts\install-claude.ps1
+```
+
+Keep the clone where it is — the skills are symlinked/junction-linked back to it, and the
+auto-update hook pulls that clone. Re-running the installer is safe (idempotent). To install the
+skills without the auto-update hook, pass `--no-hook` (bash) or `-NoHook` (PowerShell); the
+installer backs up `~/.claude/settings.json` to `settings.json.bak` before adding the hook.
+
+#### Claude Code on the web
+
+Web sessions run in ephemeral containers, so install at session start rather than once. In your
+[environment's setup script](https://code.claude.com/docs/en/claude-code-on-the-web), clone the
+pack and run the installer. A fresh clone each session means it is always current, so the
+auto-update hook is unnecessary there:
+
+```bash
+git clone --depth 1 https://github.com/saemihemma/lead-producer-oss.git "$HOME/.claude/packs/lead-producer-oss" \
+  || git -C "$HOME/.claude/packs/lead-producer-oss" pull --ff-only
+bash "$HOME/.claude/packs/lead-producer-oss/scripts/install-claude.sh" --no-hook
+```
+
+#### Single project only
+
 Clone the pack once, then link its `.claude` directory into the project where you want to use
 `/lead-producer`.
 
 **macOS / Linux**
 
 ```bash
-git clone https://github.com/saemihemma/lead-producer.git
-cd lead-producer
+git clone https://github.com/saemihemma/lead-producer-oss.git
+cd lead-producer-oss
 ln -s "$(pwd)/.claude" /path/to/your/project/.claude
 ```
 
 **Windows (PowerShell)**
 
 ```powershell
-git clone https://github.com/saemihemma/lead-producer.git
-Set-Location lead-producer
+git clone https://github.com/saemihemma/lead-producer-oss.git
+Set-Location lead-producer-oss
 New-Item -ItemType Junction -Path 'C:\path\to\your\project\.claude' -Target "$PWD\.claude"
 ```
 
@@ -397,6 +442,10 @@ lead-producer/
 |-- .github/
 |   `-- workflows/validate.yml        # CI: runs the pack validator
 |-- scripts/
+|   |-- install-claude.sh             # macOS/Linux Claude Code installer (user-level + auto-update)
+|   |-- install-claude.ps1            # Windows Claude Code installer (user-level + auto-update)
+|   |-- lp-session-update.sh          # SessionStart auto-update hook (macOS/Linux/web)
+|   |-- lp-session-update.ps1         # SessionStart auto-update hook (Windows)
 |   |-- install-codex.sh              # macOS/Linux Codex installer
 |   |-- install-codex.ps1             # Windows Codex installer
 |   `-- validate-skills.py            # pack consistency validator
